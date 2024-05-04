@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "Td+peVN8Gm6NPIqyb8M/LMG3JDpVRPRI52HprEmdwCELMicYjQ0Wb2HBZ8M+Dt7TqOEGDpmbgvuYbq3tkPYpGA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\craft\\Documents\\GitHub\\StardewValleyDecompiled\\Stardew Valley\\Stardew Valley.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\craft\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\craft\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\craft\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\craft\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.25\\microsoft.netcore.app.host.win-x64.6.0.25.nupkg.sha512"
+  ],
+  "logs": []
+}
