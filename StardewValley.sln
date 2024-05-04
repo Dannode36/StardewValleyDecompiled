@@ -2,9 +2,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stardew Valley", "Stardew Valley\Stardew Valley.csproj", "{BCD70D84-FDF8-4F28-88B5-F5531F92C639}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stardew Valley", "Stardew Valley\Stardew Valley.csproj", "{BCD70D84-FDF8-4F28-88B5-F5531F92C639}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StardewValley.GameData", "StardewValley.GameData\StardewValley.GameData.csproj", "{8ED4BFE4-7031-425B-A953-E91C870C9B72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StardewValley.GameData", "StardewValley.GameData\StardewValley.GameData.csproj", "{8ED4BFE4-7031-425B-A953-E91C870C9B72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,7 +15,6 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BCD70D84-FDF8-4F28-88B5-F5531F92C639}.Debug|AnyCPU.ActiveCfg = Debug|x64
-		{BCD70D84-FDF8-4F28-88B5-F5531F92C639}.Debug|AnyCPU.Build.0 = Debug|x64
 		{BCD70D84-FDF8-4F28-88B5-F5531F92C639}.Debug|x64.ActiveCfg = Debug|x64
 		{BCD70D84-FDF8-4F28-88B5-F5531F92C639}.Debug|x64.Build.0 = Debug|x64
 		{BCD70D84-FDF8-4F28-88B5-F5531F92C639}.Release|AnyCPU.ActiveCfg = Release|x64
@@ -23,7 +22,6 @@ Global
 		{BCD70D84-FDF8-4F28-88B5-F5531F92C639}.Release|x64.ActiveCfg = Release|x64
 		{BCD70D84-FDF8-4F28-88B5-F5531F92C639}.Release|x64.Build.0 = Release|x64
 		{8ED4BFE4-7031-425B-A953-E91C870C9B72}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
-		{8ED4BFE4-7031-425B-A953-E91C870C9B72}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
 		{8ED4BFE4-7031-425B-A953-E91C870C9B72}.Debug|x64.ActiveCfg = Debug|AnyCPU
 		{8ED4BFE4-7031-425B-A953-E91C870C9B72}.Debug|x64.Build.0 = Debug|AnyCPU
 		{8ED4BFE4-7031-425B-A953-E91C870C9B72}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
