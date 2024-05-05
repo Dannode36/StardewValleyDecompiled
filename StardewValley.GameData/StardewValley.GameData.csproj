@@ -13,7 +13,7 @@
   <ItemGroup />
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Stardew Valley\MonoGame.Framework.dll</HintPath>
+      <HintPath>..\..\Stardew Valley\MonoGame.Framework.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stardew Valley", "Stardew Valley\Stardew Valley.csproj", "{89DFDC7C-E851-4267-8EE6-7DF37E5D9018}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StardewValley.GameData", "StardewValley.GameData\StardewValley.GameData.csproj", "{13DF14D3-032A-4E3D-A87D-2C6F5A8921DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89DFDC7C-E851-4267-8EE6-7DF37E5D9018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89DFDC7C-E851-4267-8EE6-7DF37E5D9018}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89DFDC7C-E851-4267-8EE6-7DF37E5D9018}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89DFDC7C-E851-4267-8EE6-7DF37E5D9018}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13DF14D3-032A-4E3D-A87D-2C6F5A8921DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13DF14D3-032A-4E3D-A87D-2C6F5A8921DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13DF14D3-032A-4E3D-A87D-2C6F5A8921DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13DF14D3-032A-4E3D-A87D-2C6F5A8921DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE9DD3F3-F1EC-46D8-BB60-C59CDE77FD8F}
+	EndGlobalSection
+EndGlobal
