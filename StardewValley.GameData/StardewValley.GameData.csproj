@@ -11,9 +11,4 @@
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup />
-  <ItemGroup>
-    <Reference Include="MonoGame.Framework">
-      <HintPath>..\..\Stardew Valley\MonoGame.Framework.dll</HintPath>
-    </Reference>
-  </ItemGroup>
 </Project>

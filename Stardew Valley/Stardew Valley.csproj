@@ -23,14 +23,14 @@
     <EmbeddedResource Include="StardewValley.Icon.bmp" LogicalName="StardewValley.Icon.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\StardewValley.GameData\StardewValley.GameData.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="MonoGame.Framework">
       <HintPath>..\..\Stardew Valley\MonoGame.Framework.dll</HintPath>
     </Reference>
     <Reference Include="xTile">
       <HintPath>..\..\Stardew Valley\xTile.dll</HintPath>
-    </Reference>
-    <Reference Include="StardewValley.GameData">
-      <HintPath>..\..\Stardew Valley\StardewValley.GameData.dll</HintPath>
     </Reference>
     <Reference Include="SkiaSharp">
       <HintPath>..\..\Stardew Valley\SkiaSharp.dll</HintPath>
