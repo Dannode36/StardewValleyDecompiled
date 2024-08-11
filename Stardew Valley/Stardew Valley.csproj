@@ -27,34 +27,34 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
-      <HintPath>..\..\Stardew Valley\MonoGame.Framework.dll</HintPath>
+      <HintPath>..\MonoGame.Framework.dll</HintPath>
     </Reference>
     <Reference Include="xTile">
-      <HintPath>..\..\Stardew Valley\xTile.dll</HintPath>
+      <HintPath>..\xTile.dll</HintPath>
     </Reference>
     <Reference Include="SkiaSharp">
-      <HintPath>..\..\Stardew Valley\SkiaSharp.dll</HintPath>
+      <HintPath>..\SkiaSharp.dll</HintPath>
     </Reference>
     <Reference Include="Steamworks.NET">
-      <HintPath>..\..\Stardew Valley\Steamworks.NET.dll</HintPath>
+      <HintPath>..\Steamworks.NET.dll</HintPath>
     </Reference>
     <Reference Include="GalaxyCSharp">
-      <HintPath>..\..\Stardew Valley\GalaxyCSharp.dll</HintPath>
+      <HintPath>..\GalaxyCSharp.dll</HintPath>
     </Reference>
     <Reference Include="Lidgren.Network">
-      <HintPath>..\..\Stardew Valley\Lidgren.Network.dll</HintPath>
+      <HintPath>..\Lidgren.Network.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.HashFunction.Interfaces">
-      <HintPath>..\..\Stardew Valley\System.Data.HashFunction.Interfaces.dll</HintPath>
+      <HintPath>..\System.Data.HashFunction.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="BmFont">
-      <HintPath>..\..\Stardew Valley\BmFont.dll</HintPath>
+      <HintPath>..\BmFont.dll</HintPath>
     </Reference>
     <Reference Include="TextCopy">
-      <HintPath>..\..\Stardew Valley\TextCopy.dll</HintPath>
+      <HintPath>..\TextCopy.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.HashFunction.xxHash">
-      <HintPath>..\..\Stardew Valley\System.Data.HashFunction.xxHash.dll</HintPath>
+      <HintPath>..\System.Data.HashFunction.xxHash.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
