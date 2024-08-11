@@ -108,7 +108,7 @@ public class Background
 
 	public virtual void draw(SpriteBatch b)
 	{
-		Microsoft.Xna.Framework.Rectangle r;
+		Random r;
 		if (summitBG)
 		{
 			if (Game1.viewport.X <= -1000)
@@ -203,19 +203,19 @@ public class Background
 			return;
 		}
 		Vector2 v = Vector2.Zero;
-		r = new Microsoft.Xna.Framework.Rectangle(0, 0, chunkWidth, chunkHeight);
+        Microsoft.Xna.Framework.Rectangle rect = new Microsoft.Xna.Framework.Rectangle(0, 0, chunkWidth, chunkHeight);
 		for (int i = 0; i < chunks.Length; i++)
 		{
 			v.X = position.X + (float)(i * chunkWidth % (chunksWide * chunkWidth)) * zoom;
 			v.Y = position.Y + (float)(i * chunkWidth / (chunksWide * chunkWidth) * chunkHeight) * zoom;
 			if (backgroundImage == null)
 			{
-				b.Draw(Game1.staminaRect, new Microsoft.Xna.Framework.Rectangle((int)v.X, (int)v.Y, Game1.viewport.Width, Game1.viewport.Height), r, c, 0f, Vector2.Zero, SpriteEffects.None, 0f);
+				b.Draw(Game1.staminaRect, new Microsoft.Xna.Framework.Rectangle((int)v.X, (int)v.Y, Game1.viewport.Width, Game1.viewport.Height), rect, c, 0f, Vector2.Zero, SpriteEffects.None, 0f);
 				continue;
 			}
-			r.X = chunks[i] * chunkWidth % backgroundImage.Width;
-			r.Y = chunks[i] * chunkWidth / backgroundImage.Width * chunkHeight;
-			b.Draw(backgroundImage, v, r, c, 0f, Vector2.Zero, zoom, SpriteEffects.None, 0f);
+			rect.X = chunks[i] * chunkWidth % backgroundImage.Width;
+            rect.Y = chunks[i] * chunkWidth / backgroundImage.Width * chunkHeight;
+			b.Draw(backgroundImage, v, rect, c, 0f, Vector2.Zero, zoom, SpriteEffects.None, 0f);
 		}
 	}
 }

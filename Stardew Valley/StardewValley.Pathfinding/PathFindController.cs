@@ -476,11 +476,11 @@ public class PathFindController
 		{
 			if (tile.TileIndexProperties.TryGetValue("Action", out var value) || tile.Properties.TryGetValue("Action", out value))
 			{
-				if (value.StartsWith("LockedDoorWarp"))
+				if (((string)value).StartsWith("LockedDoorWarp"))
 				{
 					return true;
 				}
-				if (!value.Contains("Door") && !value.Contains("Passable"))
+				if (!((string)value).Contains("Door") && !((string)value).Contains("Passable"))
 				{
 					return true;
 				}

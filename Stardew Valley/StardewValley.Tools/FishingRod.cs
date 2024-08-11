@@ -738,13 +738,13 @@ public class FishingRod : Tool
 
 	public Color getColor()
 	{
-		return upgradeLevel switch
+		return upgradeLevel.Value switch
 		{
-			0L => Color.Goldenrod, 
-			1L => Color.OliveDrab, 
-			2L => Color.White, 
-			3L => Color.Violet, 
-			4L => new Color(128, 143, 255), 
+			0 => Color.Goldenrod, 
+			1 => Color.OliveDrab, 
+			2 => Color.White, 
+			3 => Color.Violet, 
+			4 => new Color(128, 143, 255), 
 			_ => Color.White, 
 		};
 	}

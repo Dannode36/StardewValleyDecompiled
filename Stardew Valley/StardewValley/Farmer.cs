@@ -4828,15 +4828,15 @@ public class Farmer : Character, IComparable
 		{
 			actualItem.Stack = originalStack;
 		}
-		if (actualItem.HasTypeObject() && actualItem is Object obj)
+		if (actualItem.HasTypeObject() && actualItem is Object basicObj)
 		{
-			if (obj.Category == -2 || obj.Type == "Minerals")
+			if (basicObj.Category == -2 || basicObj.Type == "Minerals")
 			{
-				foundMineral(obj.ItemId);
+				foundMineral(basicObj.ItemId);
 			}
-			else if (obj.Type == "Arch")
+			else if (basicObj.Type == "Arch")
 			{
-				foundArtifact(obj.ItemId, 1);
+				foundArtifact(basicObj.ItemId, 1);
 			}
 		}
 		switch (actualItem.QualifiedItemId)
@@ -5404,7 +5404,7 @@ public class Farmer : Character, IComparable
 			case Hat.HairDrawType.HideHair:
 				return -1;
 			case Hat.HairDrawType.DrawObscuredHair:
-				switch (hair)
+				switch ((long)hair.Value)
 				{
 				case 50L:
 				case 51L:
@@ -6871,7 +6871,7 @@ public class Farmer : Character, IComparable
 		}
 		Color powerUpColor = Color.White;
 		int frameOffset = ((FacingDirection == 0) ? 4 : ((FacingDirection == 2) ? 2 : 0));
-		switch (toolPower)
+		switch ((long)toolPower.Value)
 		{
 		case 1L:
 			powerUpColor = Color.Orange;

@@ -510,56 +510,56 @@ public class SaveMigrator_1_6 : ISaveMigrator
 				}
 				foreach (Quest rawQuest in player.questLog)
 				{
-					if (!(rawQuest is CraftingQuest quest))
+					if (rawQuest is not CraftingQuest craftQuest)
 					{
-						if (!(rawQuest is FishingQuest quest))
+						if (rawQuest is not FishingQuest fishQuest)
 						{
-							if (!(rawQuest is ItemDeliveryQuest quest))
+							if (rawQuest is not ItemDeliveryQuest itemDeliverQuest)
 							{
-								if (!(rawQuest is ItemHarvestQuest quest))
+								if (rawQuest is not ItemHarvestQuest itemHarvestQuest)
 								{
-									if (!(rawQuest is LostItemQuest quest))
+									if (rawQuest is not LostItemQuest lostItemQuest)
 									{
-										if (!(rawQuest is ResourceCollectionQuest quest))
+										if (rawQuest is not ResourceCollectionQuest resourceCollectQuest)
 										{
-											if (rawQuest is SecretLostItemQuest quest)
+											if (rawQuest is SecretLostItemQuest secretLostItemQuest)
 											{
-												quest.ItemId.Value = ItemRegistry.ManuallyQualifyItemId(quest.ItemId.Value, "(O)");
+												secretLostItemQuest.ItemId.Value = ItemRegistry.ManuallyQualifyItemId(secretLostItemQuest.ItemId.Value, "(O)");
 											}
 										}
 										else
 										{
-											quest.ItemId.Value = ItemRegistry.ManuallyQualifyItemId(quest.ItemId.Value, "(O)");
+											resourceCollectQuest.ItemId.Value = ItemRegistry.ManuallyQualifyItemId(resourceCollectQuest.ItemId.Value, "(O)");
 										}
 									}
 									else
 									{
-										quest.ItemId.Value = ItemRegistry.ManuallyQualifyItemId(quest.ItemId.Value, "(O)");
+										lostItemQuest.ItemId.Value = ItemRegistry.ManuallyQualifyItemId(lostItemQuest.ItemId.Value, "(O)");
 									}
 								}
 								else
 								{
-									quest.ItemId.Value = ItemRegistry.ManuallyQualifyItemId(quest.ItemId.Value, "(O)");
+									itemHarvestQuest.ItemId.Value = ItemRegistry.ManuallyQualifyItemId(itemHarvestQuest.ItemId.Value, "(O)");
 								}
 							}
 							else
 							{
-								quest.ItemId.Value = ItemRegistry.ManuallyQualifyItemId(quest.ItemId.Value, "(O)");
-								if (quest.dailyQuest.Value)
+								itemDeliverQuest.ItemId.Value = ItemRegistry.ManuallyQualifyItemId(itemDeliverQuest.ItemId.Value, "(O)");
+								if (itemDeliverQuest.dailyQuest.Value)
 								{
-									quest.moneyReward.Value = quest.GetGoldRewardPerItem(ItemRegistry.Create(quest.ItemId.Value));
+									itemDeliverQuest.moneyReward.Value = itemDeliverQuest.GetGoldRewardPerItem(ItemRegistry.Create(itemDeliverQuest.ItemId.Value));
 								}
 							}
 						}
 						else
 						{
-							quest.ItemId.Value = ItemRegistry.ManuallyQualifyItemId(quest.ItemId.Value, "(O)");
+							fishQuest.ItemId.Value = ItemRegistry.ManuallyQualifyItemId(fishQuest.ItemId.Value, "(O)");
 						}
 					}
 					else
 					{
-						quest.ItemId.Value = ItemRegistry.ManuallyQualifyItemId(quest.ItemId.Value, quest.obsolete_isBigCraftable.GetValueOrDefault() ? "(BC)" : "(O)");
-						quest.obsolete_isBigCraftable = null;
+						craftQuest.ItemId.Value = ItemRegistry.ManuallyQualifyItemId(craftQuest.ItemId.Value, craftQuest.obsolete_isBigCraftable.GetValueOrDefault() ? "(BC)" : "(O)");
+						craftQuest.obsolete_isBigCraftable = null;
 					}
 				}
 			}
@@ -1031,23 +1031,23 @@ public class SaveMigrator_1_6 : ISaveMigrator
 			player.obsolete_hasRustyKey = null;
 			player.obsolete_hasSkullKey = null;
 			player.obsolete_canUnderstandDwarves = null;
-			foreach (Farmer player in Game1.getAllFarmers())
+			foreach (Farmer otherPlayer in Game1.getAllFarmers())
 			{
-				player.hasClubCard = player.hasClubCard || (player.obsolete_hasClubCard ?? false);
-				player.hasDarkTalisman = player.hasDarkTalisman || (player.obsolete_hasDarkTalisman ?? false);
-				player.hasMagicInk = player.hasMagicInk || (player.obsolete_hasMagicInk ?? false);
-				player.hasMagnifyingGlass = player.hasMagnifyingGlass || (player.obsolete_hasMagnifyingGlass ?? false);
-				player.hasSpecialCharm = player.hasSpecialCharm || (player.obsolete_hasSpecialCharm ?? false);
-				player.HasTownKey = player.HasTownKey || (player.obsolete_hasTownKey ?? false);
-				player.hasUnlockedSkullDoor = player.hasUnlockedSkullDoor || (player.obsolete_hasUnlockedSkullDoor ?? false);
-				player.obsolete_hasClubCard = null;
-				player.obsolete_hasDarkTalisman = null;
-				player.obsolete_hasMagicInk = null;
-				player.obsolete_hasMagnifyingGlass = null;
-				player.obsolete_hasSpecialCharm = null;
-				player.obsolete_hasTownKey = null;
-				player.obsolete_hasUnlockedSkullDoor = null;
-				player.obsolete_daysMarried = null;
+				otherPlayer.hasClubCard = otherPlayer.hasClubCard || (otherPlayer.obsolete_hasClubCard ?? false);
+				otherPlayer.hasDarkTalisman = otherPlayer.hasDarkTalisman || (otherPlayer.obsolete_hasDarkTalisman ?? false);
+				otherPlayer.hasMagicInk = otherPlayer.hasMagicInk || (otherPlayer.obsolete_hasMagicInk ?? false);
+				otherPlayer.hasMagnifyingGlass = otherPlayer.hasMagnifyingGlass || (otherPlayer.obsolete_hasMagnifyingGlass ?? false);
+				otherPlayer.hasSpecialCharm = otherPlayer.hasSpecialCharm || (otherPlayer.obsolete_hasSpecialCharm ?? false);
+				otherPlayer.HasTownKey = otherPlayer.HasTownKey || (otherPlayer.obsolete_hasTownKey ?? false);
+				otherPlayer.hasUnlockedSkullDoor = otherPlayer.hasUnlockedSkullDoor || (otherPlayer.obsolete_hasUnlockedSkullDoor ?? false);
+				otherPlayer.obsolete_hasClubCard = null;
+				otherPlayer.obsolete_hasDarkTalisman = null;
+				otherPlayer.obsolete_hasMagicInk = null;
+				otherPlayer.obsolete_hasMagnifyingGlass = null;
+				otherPlayer.obsolete_hasSpecialCharm = null;
+				otherPlayer.obsolete_hasTownKey = null;
+				otherPlayer.obsolete_hasUnlockedSkullDoor = null;
+                otherPlayer.obsolete_daysMarried = null;
 			}
 			return true;
 		}

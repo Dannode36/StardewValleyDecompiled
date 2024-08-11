@@ -277,7 +277,7 @@ public class Bush : LargeTerrainFeature
 	public override Rectangle getBoundingBox()
 	{
 		Vector2 tileLocation = Tile;
-		switch (size)
+		switch ((long)size.Value)
 		{
 		case 0L:
 		case 3L:
@@ -295,7 +295,7 @@ public class Bush : LargeTerrainFeature
 	public override Rectangle getRenderBounds()
 	{
 		Vector2 tileLocation = Tile;
-		switch (size)
+		switch ((long)size.Value)
 		{
 		case 0L:
 		case 3L:
@@ -389,7 +389,7 @@ public class Bush : LargeTerrainFeature
 			}
 			tileSheetOffset.Value = 0;
 			setUpSourceRect();
-			switch (size)
+			switch ((long)size)
 			{
 			case 4L:
 				uniqueSpawnMutex.RequestLock(delegate

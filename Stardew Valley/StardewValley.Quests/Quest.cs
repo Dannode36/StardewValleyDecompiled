@@ -127,9 +127,9 @@ public class Quest : INetObject<NetFields>, IQuest, IHaveModData
 				switch (questType.Value)
 				{
 				case 3:
-					if (this is ItemDeliveryQuest quest && quest.target.Value != null)
+					if (this is ItemDeliveryQuest itemDeliverQuest && itemDeliverQuest.target.Value != null)
 					{
-						_questTitle = Game1.content.LoadString("Strings\\1_6_Strings:ItemDeliveryQuestTitle", NPC.GetDisplayName(quest.target.Value));
+						_questTitle = Game1.content.LoadString("Strings\\1_6_Strings:ItemDeliveryQuestTitle", NPC.GetDisplayName(itemDeliverQuest.target.Value));
 					}
 					else
 					{
@@ -137,9 +137,9 @@ public class Quest : INetObject<NetFields>, IQuest, IHaveModData
 					}
 					break;
 				case 4:
-					if (this is SlayMonsterQuest quest && quest.monsterName.Value != null)
+					if (this is SlayMonsterQuest slayQuest && slayQuest.monsterName.Value != null)
 					{
-						_questTitle = Game1.content.LoadString("Strings\\1_6_Strings:MonsterQuestTitle", Monster.GetDisplayName(quest.monsterName.Value));
+						_questTitle = Game1.content.LoadString("Strings\\1_6_Strings:MonsterQuestTitle", Monster.GetDisplayName(slayQuest.monsterName.Value));
 					}
 					else
 					{
@@ -150,10 +150,10 @@ public class Quest : INetObject<NetFields>, IQuest, IHaveModData
 					_questTitle = Game1.content.LoadString("Strings\\StringsFromCSFiles:SocializeQuest.cs.13785");
 					break;
 				case 7:
-					if (this is FishingQuest quest && quest.ItemId.Value != null)
+					if (this is FishingQuest fishQuest && fishQuest.ItemId.Value != null)
 					{
 						string fishName = "???";
-						ParsedItemData data = ItemRegistry.GetDataOrErrorItem(quest.ItemId.Value);
+						ParsedItemData data = ItemRegistry.GetDataOrErrorItem(fishQuest.ItemId.Value);
 						if (!data.IsErrorItem)
 						{
 							fishName = data.DisplayName;
@@ -166,10 +166,10 @@ public class Quest : INetObject<NetFields>, IQuest, IHaveModData
 					}
 					break;
 				case 10:
-					if (this is ResourceCollectionQuest quest && quest.ItemId.Value != null)
+					if (this is ResourceCollectionQuest resourceQuest && resourceQuest.ItemId.Value != null)
 					{
 						string resourceName = "???";
-						ParsedItemData data = ItemRegistry.GetDataOrErrorItem(quest.ItemId.Value);
+						ParsedItemData data = ItemRegistry.GetDataOrErrorItem(resourceQuest.ItemId.Value);
 						if (!data.IsErrorItem)
 						{
 							resourceName = data.DisplayName;
@@ -186,7 +186,7 @@ public class Quest : INetObject<NetFields>, IQuest, IHaveModData
 				_questTitle = ArgUtility.Get(fields, 1, _questTitle);
 				_loadedTitle = true;
 			}
-			if (_questTitle == null)
+            if (_questTitle == null)
 			{
 				_questTitle = "";
 			}

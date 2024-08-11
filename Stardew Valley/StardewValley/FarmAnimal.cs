@@ -1167,11 +1167,11 @@ public class FarmAnimal : Character
 			{
 				moodMessage.Value = 1;
 			}
-			return moodMessage switch
+			return moodMessage.Value switch
 			{
-				3L => Game1.content.LoadString("Strings\\FarmAnimals:MoodMessage_Sad", displayName), 
-				2L => Game1.content.LoadString("Strings\\FarmAnimals:MoodMessage_Fine", displayName), 
-				1L => Game1.content.LoadString("Strings\\FarmAnimals:MoodMessage_Happy", displayName), 
+				3 => Game1.content.LoadString("Strings\\FarmAnimals:MoodMessage_Sad", displayName), 
+				2 => Game1.content.LoadString("Strings\\FarmAnimals:MoodMessage_Fine", displayName), 
+				1 => Game1.content.LoadString("Strings\\FarmAnimals:MoodMessage_Happy", displayName), 
 				_ => "", 
 			};
 		}

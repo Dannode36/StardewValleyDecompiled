@@ -758,13 +758,13 @@ public class FruitTree : TerrainFeature
 				{
 					return false;
 				}
-				damage = t.upgradeLevel switch
+				damage = t.upgradeLevel.Value switch
 				{
-					0L => 1f, 
-					1L => 1.25f, 
-					2L => 1.67f, 
-					3L => 2.5f, 
-					4L => 5f, 
+					0 => 1f, 
+					1 => 1.25f, 
+					2 => 1.67f, 
+					3 => 2.5f, 
+					4 => 5f, 
 					_ => (int)t.upgradeLevel + 1, 
 				};
 			}
@@ -845,19 +845,19 @@ public class FruitTree : TerrainFeature
 			{
 				switch (t.upgradeLevel)
 				{
-				case 0L:
+				case 0:
 					damage = 2f;
 					break;
-				case 1L:
+				case 1:
 					damage = 2.5f;
 					break;
-				case 2L:
+				case 2:
 					damage = 3.34f;
 					break;
-				case 3L:
+				case 3:
 					damage = 5f;
 					break;
-				case 4L:
+				case 4:
 					damage = 10f;
 					break;
 				}
@@ -934,11 +934,11 @@ public class FruitTree : TerrainFeature
 		layerDepth += positionOnScreen.X / 100000f;
 		if ((int)growthStage < 4)
 		{
-			Rectangle sourceRect = growthStage switch
+			Rectangle sourceRect = growthStage.Value switch
 			{
-				0L => new Rectangle(128, 512, 64, 64), 
-				1L => new Rectangle(0, 512, 64, 64), 
-				2L => new Rectangle(64, 512, 64, 64), 
+				0 => new Rectangle(128, 512, 64, 64), 
+				1 => new Rectangle(0, 512, 64, 64), 
+				2 => new Rectangle(64, 512, 64, 64), 
 				_ => new Rectangle(0, 384, 64, 128), 
 			};
 			spriteBatch.Draw(texture, positionOnScreen - new Vector2(0f, (float)sourceRect.Height * scale), sourceRect, Color.White, 0f, Vector2.Zero, scale, flipped ? SpriteEffects.FlipHorizontally : SpriteEffects.None, layerDepth + (positionOnScreen.Y + (float)sourceRect.Height * scale) / 20000f);
@@ -967,11 +967,11 @@ public class FruitTree : TerrainFeature
 		if ((int)growthStage < 4)
 		{
 			Vector2 positionOffset = new Vector2((float)Math.Max(-8.0, Math.Min(64.0, Math.Sin((double)(tileLocation.X * 200f) / (Math.PI * 2.0)) * -16.0)), (float)Math.Max(-8.0, Math.Min(64.0, Math.Sin((double)(tileLocation.X * 200f) / (Math.PI * 2.0)) * -16.0))) / 2f;
-			Rectangle sourceRect = growthStage switch
+			Rectangle sourceRect = growthStage.Value switch
 			{
-				0L => new Rectangle(0, spriteRow * 5 * 16, 48, 80), 
-				1L => new Rectangle(48, spriteRow * 5 * 16, 48, 80), 
-				2L => new Rectangle(96, spriteRow * 5 * 16, 48, 80), 
+				0 => new Rectangle(0, spriteRow * 5 * 16, 48, 80), 
+				1 => new Rectangle(48, spriteRow * 5 * 16, 48, 80), 
+				2 => new Rectangle(96, spriteRow * 5 * 16, 48, 80), 
 				_ => new Rectangle(144, spriteRow * 5 * 16, 48, 80), 
 			};
 			spriteBatch.Draw(this.texture, Game1.GlobalToLocal(Game1.viewport, new Vector2(tileLocation.X * 64f + 32f + positionOffset.X, tileLocation.Y * 64f - (float)sourceRect.Height + 128f + positionOffset.Y)), sourceRect, Color.White, shakeRotation, new Vector2(24f, 80f), 4f, flipped ? SpriteEffects.FlipHorizontally : SpriteEffects.None, (float)boundingBox.Bottom / 10000f - tileLocation.X / 1000000f);

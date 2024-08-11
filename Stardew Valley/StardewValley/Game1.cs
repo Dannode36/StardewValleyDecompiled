@@ -2464,8 +2464,8 @@ public class Game1 : InstanceGame
 			{
 				optionsPage.preWindowSizeChange();
 			}
-			GameMenu gameMenu = (GameMenu)(activeClickableMenu = new GameMenu(gameMenu.currentTab));
-			if (gameMenu.GetCurrentPage() is OptionsPage newOptionsPage)
+			GameMenu gameMenuWhat = (GameMenu)(activeClickableMenu = new GameMenu(gameMenu.currentTab));
+			if (gameMenuWhat.GetCurrentPage() is OptionsPage newOptionsPage)
 			{
 				newOptionsPage.postWindowSizeChange();
 			}
