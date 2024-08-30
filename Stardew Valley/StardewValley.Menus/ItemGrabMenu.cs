@@ -1233,15 +1233,15 @@ public class ItemGrabMenu : MenuWithInventory
 		{
 			return;
 		}
-		ClickableComponent component = getComponentWithID(53910);
-		if (component != null)
+		ClickableComponent component53910 = getComponentWithID(53910);
+		if (component53910 != null)
 		{
-			setCurrentlySnappedComponentTo(component.myID);
+			setCurrentlySnappedComponentTo(component53910.myID);
 			snapCursorToCurrentSnappedComponent();
 			return;
 		}
-		component = getComponentWithID(0);
-		if (component != null)
+        component53910 = getComponentWithID(0);
+		if (component53910 != null)
 		{
 			setCurrentlySnappedComponentTo(0);
 			snapCursorToCurrentSnappedComponent();
