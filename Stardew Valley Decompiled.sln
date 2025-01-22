@@ -1,26 +1,37 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.9.34728.123
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stardew Valley", "Stardew Valley\Stardew Valley.csproj", "{89DFDC7C-E851-4267-8EE6-7DF37E5D9018}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stardew Valley", "Stardew Valley\Stardew Valley.csproj", "{4E9C7AD4-B8DE-4067-A748-4BDC0DEF9D36}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StardewValley.GameData", "StardewValley.GameData\StardewValley.GameData.csproj", "{13DF14D3-032A-4E3D-A87D-2C6F5A8921DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StardewValley.GameData", "StardewValley.GameData\StardewValley.GameData.csproj", "{AEFA81EF-5ED7-4E49-A795-F49E61690530}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		Debug|AnyCPU = Debug|AnyCPU
+		Debug|x64 = Debug|x64
+		Release|AnyCPU = Release|AnyCPU
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{89DFDC7C-E851-4267-8EE6-7DF37E5D9018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89DFDC7C-E851-4267-8EE6-7DF37E5D9018}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{13DF14D3-032A-4E3D-A87D-2C6F5A8921DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{13DF14D3-032A-4E3D-A87D-2C6F5A8921DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E9C7AD4-B8DE-4067-A748-4BDC0DEF9D36}.Debug|AnyCPU.ActiveCfg = Debug|x64
+		{4E9C7AD4-B8DE-4067-A748-4BDC0DEF9D36}.Debug|AnyCPU.Build.0 = Debug|x64
+		{4E9C7AD4-B8DE-4067-A748-4BDC0DEF9D36}.Debug|x64.ActiveCfg = Debug|x64
+		{4E9C7AD4-B8DE-4067-A748-4BDC0DEF9D36}.Debug|x64.Build.0 = Debug|x64
+		{4E9C7AD4-B8DE-4067-A748-4BDC0DEF9D36}.Release|AnyCPU.ActiveCfg = Release|x64
+		{4E9C7AD4-B8DE-4067-A748-4BDC0DEF9D36}.Release|AnyCPU.Build.0 = Release|x64
+		{4E9C7AD4-B8DE-4067-A748-4BDC0DEF9D36}.Release|x64.ActiveCfg = Release|x64
+		{4E9C7AD4-B8DE-4067-A748-4BDC0DEF9D36}.Release|x64.Build.0 = Release|x64
+		{AEFA81EF-5ED7-4E49-A795-F49E61690530}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
+		{AEFA81EF-5ED7-4E49-A795-F49E61690530}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
+		{AEFA81EF-5ED7-4E49-A795-F49E61690530}.Debug|x64.ActiveCfg = Debug|AnyCPU
+		{AEFA81EF-5ED7-4E49-A795-F49E61690530}.Debug|x64.Build.0 = Debug|AnyCPU
+		{AEFA81EF-5ED7-4E49-A795-F49E61690530}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
+		{AEFA81EF-5ED7-4E49-A795-F49E61690530}.Release|AnyCPU.Build.0 = Release|AnyCPU
+		{AEFA81EF-5ED7-4E49-A795-F49E61690530}.Release|x64.ActiveCfg = Release|AnyCPU
+		{AEFA81EF-5ED7-4E49-A795-F49E61690530}.Release|x64.Build.0 = Release|AnyCPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {FE9DD3F3-F1EC-46D8-BB60-C59CDE77FD8F}
 	EndGlobalSection
 EndGlobal

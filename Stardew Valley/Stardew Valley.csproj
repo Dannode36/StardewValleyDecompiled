@@ -23,38 +23,38 @@
     <EmbeddedResource Include="StardewValley.Icon.bmp" LogicalName="StardewValley.Icon.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\StardewValley.GameData\StardewValley.GameData.csproj" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="MonoGame.Framework">
-      <HintPath>..\MonoGame.Framework.dll</HintPath>
+      <HintPath>D:\SteamLibrary\steamapps\common\Stardew Valley\MonoGame.Framework.dll</HintPath>
     </Reference>
     <Reference Include="xTile">
-      <HintPath>..\xTile.dll</HintPath>
+      <HintPath>D:\SteamLibrary\steamapps\common\Stardew Valley\xTile.dll</HintPath>
+    </Reference>
+    <Reference Include="StardewValley.GameData">
+      <HintPath>D:\SteamLibrary\steamapps\common\Stardew Valley\StardewValley.GameData.dll</HintPath>
     </Reference>
     <Reference Include="SkiaSharp">
-      <HintPath>..\SkiaSharp.dll</HintPath>
+      <HintPath>D:\SteamLibrary\steamapps\common\Stardew Valley\SkiaSharp.dll</HintPath>
     </Reference>
     <Reference Include="Steamworks.NET">
-      <HintPath>..\Steamworks.NET.dll</HintPath>
+      <HintPath>D:\SteamLibrary\steamapps\common\Stardew Valley\Steamworks.NET.dll</HintPath>
     </Reference>
     <Reference Include="GalaxyCSharp">
-      <HintPath>..\GalaxyCSharp.dll</HintPath>
+      <HintPath>D:\SteamLibrary\steamapps\common\Stardew Valley\GalaxyCSharp.dll</HintPath>
     </Reference>
     <Reference Include="Lidgren.Network">
-      <HintPath>..\Lidgren.Network.dll</HintPath>
+      <HintPath>D:\SteamLibrary\steamapps\common\Stardew Valley\Lidgren.Network.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.HashFunction.Interfaces">
-      <HintPath>..\System.Data.HashFunction.Interfaces.dll</HintPath>
+      <HintPath>D:\SteamLibrary\steamapps\common\Stardew Valley\System.Data.HashFunction.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="BmFont">
-      <HintPath>..\BmFont.dll</HintPath>
+      <HintPath>D:\SteamLibrary\steamapps\common\Stardew Valley\BmFont.dll</HintPath>
     </Reference>
     <Reference Include="TextCopy">
-      <HintPath>..\TextCopy.dll</HintPath>
+      <HintPath>D:\SteamLibrary\steamapps\common\Stardew Valley\TextCopy.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.HashFunction.xxHash">
-      <HintPath>..\System.Data.HashFunction.xxHash.dll</HintPath>
+      <HintPath>D:\SteamLibrary\steamapps\common\Stardew Valley\System.Data.HashFunction.xxHash.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

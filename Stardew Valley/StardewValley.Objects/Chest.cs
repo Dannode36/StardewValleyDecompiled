@@ -676,9 +676,9 @@ public class Chest : Object
 				else if (!synchronized.Value || GetMutex().IsLockHeld())
 				{
 					item.onDetachedFromParent();
-					if (Game1.activeClickableMenu is ItemGrabMenu grabMenuActive)
+					if (Game1.activeClickableMenu is ItemGrabMenu grabMenu)
 					{
-                        grabMenuActive.ItemsToGrabMenu.actualInventory.Add(item);
+						grabMenu.ItemsToGrabMenu.actualInventory.Add(item);
 					}
 					else
 					{

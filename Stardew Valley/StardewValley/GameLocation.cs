@@ -5395,8 +5395,8 @@ public class GameLocation : INetObject<NetFields>, IEquatable<GameLocation>, IAn
 			{
 				return false;
 			}
-			return ((string)rawValue).Length > 0; //CHANGE: return rawValue.Length > 0;
-        }
+			return rawValue.Length > 0;
+		}
 		return false;
 	}
 
@@ -7932,19 +7932,11 @@ public class GameLocation : INetObject<NetFields>, IEquatable<GameLocation>, IAn
 	/// <param name="onlyUnlocked">Whether to only return the fridge if it's available to the player (e.g. they've unlocked the required house upgrade).</param>
 	public virtual Chest GetFridge(bool onlyUnlocked = true)
 	{
-        /* CHANGE:
 		if (!(this is FarmHouse home))
 		{
-			if (this is IslandFarmHouse home && home.fridgePosition != Point.Zero)
+			if (this is IslandFarmHouse home && (!onlyUnlocked || home.fridgePosition != Point.Zero))
 			{
-				return home.fridgePosition;
-			}
-		} */
-        if (this is not FarmHouse home)
-		{
-			if (this is IslandFarmHouse islandHome && (!onlyUnlocked || islandHome.fridgePosition != Point.Zero))
-			{
-				return islandHome.fridge.Value;
+				return home.fridge.Value;
 			}
 		}
 		else if (!onlyUnlocked || home.fridgePosition != Point.Zero)
@@ -7957,20 +7949,11 @@ public class GameLocation : INetObject<NetFields>, IEquatable<GameLocation>, IAn
 	/// <summary>Get the tile position of the fridge that's part of this map, if it has one and it's available to the player (e.g. they've unlocked the required house upgrade).</summary>
 	public virtual Point? GetFridgePosition()
 	{
-
-        /* CHANGE:
 		if (!(this is FarmHouse home))
 		{
 			if (this is IslandFarmHouse home && home.fridgePosition != Point.Zero)
 			{
 				return home.fridgePosition;
-			}
-		} */
-        if (this is not FarmHouse home)
-		{
-			if (this is IslandFarmHouse islandHome && islandHome.fridgePosition != Point.Zero)
-			{
-				return islandHome.fridgePosition;
 			}
 		}
 		else if (home.fridgePosition != Point.Zero)
@@ -8955,17 +8938,17 @@ public class GameLocation : INetObject<NetFields>, IEquatable<GameLocation>, IAn
 				}
 				break;
 			case "LeoParrot":
-				if (getTemporarySpriteByID(5858585) is EmilysParrot leosParrot) //CHANGE: is EmilysParrot parrot
-                    {
-					leosParrot.doAction();
+				if (getTemporarySpriteByID(5858585) is EmilysParrot parrot)
+				{
+					parrot.doAction();
 				}
 				break;
 			case "EmilyRoomObject":
 				if (Game1.player.eventsSeen.Contains("463391") && Game1.player.spouse != "Emily")
 				{
-					if (getTemporarySpriteByID(5858585) is EmilysParrot emilysParrot) //CHANGE: is EmilysParrot parrot
-                        {
-						emilysParrot.doAction();
+					if (getTemporarySpriteByID(5858585) is EmilysParrot parrot)
+					{
+						parrot.doAction();
 					}
 				}
 				else
@@ -12377,10 +12360,10 @@ public class GameLocation : INetObject<NetFields>, IEquatable<GameLocation>, IAn
 				targetLocation = Game1.currentLocation;
 			}
 			Game1.activeClickableMenu = new CarpenterMenu("Robin", targetLocation);
-			if (Game1.activeClickableMenu is CarpenterMenu carpenterMenu)
+			if (Game1.activeClickableMenu is CarpenterMenu menu)
 			{
-				carpenterMenu.readOnly = true;
-				carpenterMenu.behaviorBeforeCleanup = (Action<IClickableMenu>)Delegate.Combine(carpenterMenu.behaviorBeforeCleanup, (Action<IClickableMenu>)delegate
+				menu.readOnly = true;
+				menu.behaviorBeforeCleanup = (Action<IClickableMenu>)Delegate.Combine(menu.behaviorBeforeCleanup, (Action<IClickableMenu>)delegate
 				{
 					answerDialogueAction("HangUp", LegacyShims.EmptyArray<string>());
 				});
@@ -12400,10 +12383,10 @@ public class GameLocation : INetObject<NetFields>, IEquatable<GameLocation>, IAn
 			break;
 		case "telephone_Blacksmith_UpgradeCost":
 			answerDialogueAction("Blacksmith_Upgrade", LegacyShims.EmptyArray<string>());
-			if (Game1.activeClickableMenu is ShopMenu blacksmithMenu)
+			if (Game1.activeClickableMenu is ShopMenu menu)
 			{
-				blacksmithMenu.readOnly = true;
-				blacksmithMenu.behaviorBeforeCleanup = (Action<IClickableMenu>)Delegate.Combine(blacksmithMenu.behaviorBeforeCleanup, (Action<IClickableMenu>)delegate
+				menu.readOnly = true;
+				menu.behaviorBeforeCleanup = (Action<IClickableMenu>)Delegate.Combine(menu.behaviorBeforeCleanup, (Action<IClickableMenu>)delegate
 				{
 					answerDialogueAction("HangUp", LegacyShims.EmptyArray<string>());
 				});
@@ -12412,10 +12395,10 @@ public class GameLocation : INetObject<NetFields>, IEquatable<GameLocation>, IAn
 		case "telephone_SeedShop_CheckSeedStock":
 			if (Game1.getLocationFromName("SeedShop") is SeedShop)
 			{
-				if (Utility.TryOpenShopMenu("SeedShop", null, playOpenSound: true) && Game1.activeClickableMenu is ShopMenu seedShopMenu)
+				if (Utility.TryOpenShopMenu("SeedShop", null, playOpenSound: true) && Game1.activeClickableMenu is ShopMenu menu)
 				{
-                    seedShopMenu.readOnly = true;
-                    seedShopMenu.behaviorBeforeCleanup = (Action<IClickableMenu>)Delegate.Combine(seedShopMenu.behaviorBeforeCleanup, (Action<IClickableMenu>)delegate
+					menu.readOnly = true;
+					menu.behaviorBeforeCleanup = (Action<IClickableMenu>)Delegate.Combine(menu.behaviorBeforeCleanup, (Action<IClickableMenu>)delegate
 					{
 						answerDialogueAction("HangUp", LegacyShims.EmptyArray<string>());
 					});
@@ -12581,15 +12564,15 @@ public class GameLocation : INetObject<NetFields>, IEquatable<GameLocation>, IAn
 
 	private void houseUpgradeOffer()
 	{
-		switch (Game1.player.houseUpgradeLevel.Value)
+		switch (Game1.player.houseUpgradeLevel)
 		{
-		case (int)0L:
+		case 0L:
 			createQuestionDialogue(Game1.parseText(Game1.content.LoadString("Strings\\Locations:ScienceHouse_Carpenter_UpgradeHouse1")), createYesNoResponses(), "upgrade");
 			break;
-		case (int)1L:
+		case 1L:
 			createQuestionDialogue(Game1.parseText(Game1.content.LoadString("Strings\\Locations:ScienceHouse_Carpenter_UpgradeHouse2", "65,000", "100")), createYesNoResponses(), "upgrade");
 			break;
-		case (int)2L:
+		case 2L:
 			createQuestionDialogue(Game1.parseText(Game1.content.LoadString("Strings\\Locations:ScienceHouse_Carpenter_UpgradeHouse3")), createYesNoResponses(), "upgrade");
 			break;
 		}
@@ -12658,9 +12641,9 @@ public class GameLocation : INetObject<NetFields>, IEquatable<GameLocation>, IAn
 
 	private void houseUpgradeAccept()
 	{
-		switch (Game1.player.houseUpgradeLevel.Value)
+		switch (Game1.player.houseUpgradeLevel)
 		{
-		case (int)0L:
+		case 0L:
 			if (Game1.player.Money >= 10000 && Game1.player.Items.ContainsId("(O)388", 450))
 			{
 				Game1.player.daysUntilHouseUpgrade.Value = 3;
@@ -12679,7 +12662,7 @@ public class GameLocation : INetObject<NetFields>, IEquatable<GameLocation>, IAn
 				Game1.drawObjectDialogue(Game1.content.LoadString("Strings\\Locations:ScienceHouse_Carpenter_NotEnoughWood1"));
 			}
 			break;
-		case (int)1L:
+		case 1L:
 			if (Game1.player.Money >= 65000 && Game1.player.Items.ContainsId("(O)709", 100))
 			{
 				Game1.player.daysUntilHouseUpgrade.Value = 3;
@@ -12698,7 +12681,7 @@ public class GameLocation : INetObject<NetFields>, IEquatable<GameLocation>, IAn
 				Game1.drawObjectDialogue(Game1.content.LoadString("Strings\\Locations:ScienceHouse_Carpenter_NotEnoughWood2", "100"));
 			}
 			break;
-		case (int)2L:
+		case 2L:
 			if (Game1.player.Money >= 100000)
 			{
 				Game1.player.daysUntilHouseUpgrade.Value = 3;
@@ -17342,7 +17325,7 @@ public class GameLocation : INetObject<NetFields>, IEquatable<GameLocation>, IAn
 			for (int layerWidth = buildingLayer.LayerWidth; x < layerWidth; x++)
 			{
 				Tile tile = buildingLayer.Tiles[x, y];
-				if (tile == null || !tile.Properties.TryGetValue("Action", out var door) || !((string)door).Contains("Warp"))
+				if (tile == null || !tile.Properties.TryGetValue("Action", out var door) || !door.Contains("Warp"))
 				{
 					continue;
 				}
@@ -17563,9 +17546,9 @@ public class GameLocation : INetObject<NetFields>, IEquatable<GameLocation>, IAn
 			{
 				map.Properties[propertyName] = new PropertyValue(toAdd);
 			}
-			else if (!((string)oldValue).Contains(toAdd))
+			else if (!oldValue.Contains(toAdd))
 			{
-				string newValue = new StringBuilder((string)oldValue).Append(' ').Append(toAdd).ToString();
+				string newValue = new StringBuilder(oldValue).Append(" ").Append(toAdd).ToString();
 				map.Properties[propertyName] = new PropertyValue(newValue);
 			}
 		}

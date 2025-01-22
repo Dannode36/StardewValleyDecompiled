@@ -642,17 +642,19 @@ public static class ArgUtility
 	/// <returns>Returns whether the argument was successfully found and is valid.</returns>
 	public static bool TryGetVector2(string[] array, int index, out Vector2 value, out string error, bool integerOnly = false)
 	{
+		float x;
+		float y;
 		if (integerOnly)
 		{
-            if (TryGetInt(array, index, out int x, out error) && TryGetInt(array, index + 1, out int y, out error))
-            {
-                value = new Vector2(x, y);
-                return true;
-            }
-        }
-		else if (TryGetFloat(array, index, out float x, out error) && TryGetFloat(array, index + 1, out float y, out error))
+			if (TryGetInt(array, index, out x, out error) && TryGetInt(array, index + 1, out y, out error))
+			{
+				value = new Vector2(x, y);
+				return true;
+			}
+		}
+		else if (TryGetFloat(array, index, out x, out error) && TryGetFloat(array, index + 1, out y, out error))
 		{
-            value = new Vector2(x, y);
+			value = new Vector2(x, y);
 			return true;
 		}
 		value = Vector2.Zero;

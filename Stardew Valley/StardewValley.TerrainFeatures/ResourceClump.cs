@@ -132,7 +132,7 @@ public class ResourceClump : TerrainFeature
 		float power = Math.Max(1f, (float)((int)t.upgradeLevel + 1) * 0.75f);
 		GameLocation location = Location;
 		int radialDebris = 12;
-		switch ((long)parentSheetIndex.Value)
+		switch (parentSheetIndex)
 		{
 		case 600L:
 			if (t is Axe && (int)t.upgradeLevel < 1)
@@ -245,8 +245,8 @@ public class ResourceClump : TerrainFeature
 		}
 		switch (parentSheetIndex)
 		{
-		case 600:
-		case 602:
+		case 600L:
+		case 602L:
 		{
 			if (t == null)
 			{
@@ -302,12 +302,12 @@ public class ResourceClump : TerrainFeature
 			}
 			return true;
 		}
-		case 148:
-		case 672:
-		case 752:
-		case 754:
-		case 756:
-		case 758:
+		case 148L:
+		case 672L:
+		case 752L:
+		case 754L:
+		case 756L:
+		case 758L:
 		{
 			if (t == null)
 			{
@@ -328,14 +328,14 @@ public class ResourceClump : TerrainFeature
 			Color c = Color.White;
 			switch (parentSheetIndex)
 			{
-			case 752:
+			case 752L:
 				c = new Color(188, 119, 98);
 				break;
-			case 754:
+			case 754L:
 				c = new Color(168, 120, 95);
 				break;
-			case 756:
-			case 758:
+			case 756L:
+			case 758L:
 				c = new Color(67, 189, 238);
 				break;
 			}
@@ -345,7 +345,7 @@ public class ResourceClump : TerrainFeature
 			});
 			return true;
 		}
-		case 622:
+		case 622L:
 			if (t == null)
 			{
 				return false;
@@ -380,8 +380,8 @@ public class ResourceClump : TerrainFeature
 			Game1.multiplayer.broadcastSprites(Game1.currentLocation, new TemporaryAnimatedSprite(5, (tileLocation + new Vector2(0f, 1f)) * 64f, Color.White, 8, flipped: false, 90f));
 			Game1.multiplayer.broadcastSprites(Game1.currentLocation, new TemporaryAnimatedSprite(5, tileLocation * 64f + new Vector2(32f, 32f), Color.White, 8, flipped: false, 70f));
 			return true;
-		case 44:
-		case 46:
+		case 44L:
+		case 46L:
 		{
 			Color col = Color.Green;
 			for (int x = 0; x < 2; x++)
@@ -471,13 +471,13 @@ public class ResourceClump : TerrainFeature
 		}
 		switch (parentSheetIndex)
 		{
-		case 602:
+		case 602L:
 			Game1.drawObjectDialogue(Game1.parseText(Game1.content.LoadString("Strings\\StringsFromCSFiles:ResourceClump.cs.13962")));
 			return true;
-		case 672:
+		case 672L:
 			Game1.drawObjectDialogue(Game1.parseText(Game1.content.LoadString("Strings\\StringsFromCSFiles:ResourceClump.cs.13963")));
 			return true;
-		case 622:
+		case 622L:
 			Game1.drawObjectDialogue(Game1.parseText(Game1.content.LoadString("Strings\\StringsFromCSFiles:ResourceClump.cs.13964")));
 			return true;
 		default:
